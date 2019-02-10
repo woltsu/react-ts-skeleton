@@ -32,7 +32,6 @@
     "build-js": "react-scripts build",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint-fix": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
-    "precommit": "yarn test && yarn run lint",
     "codecov": "./node_modules/.bin/codecov"
   },
   "eslintConfig": {
@@ -57,5 +56,10 @@
     "redux-mock-store": "^1.5.3",
     "tslint": "^5.12.1",
     "tslint-react": "^3.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn run lint"
+    }
   }
 }
