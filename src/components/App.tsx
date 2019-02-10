@@ -1,11 +1,11 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchValue } from '../actions/exampleActions'
-import { IState } from '../interfaces'
+import { IActionCreator, IState } from '../interfaces'
 
 interface IAppProps {
   value: string,
-  fetchValue: () => void
+  fetchValue: IActionCreator
 }
 
 const App: FunctionComponent<IAppProps> = ({ value, fetchValue }) => {

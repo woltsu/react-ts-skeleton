@@ -19,7 +19,8 @@
     "object-literal-sort-keys": false,
     "trailing-comma": false,
     "jsx-curly-spacing": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "callable-types": false
   },
   "jsRules": {
     "max-line-length": {
