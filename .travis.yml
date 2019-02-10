@@ -6,6 +6,12 @@ script:
 - yarn run lint
 - yarn run test-coverage
 - yarn run codecov
+notifications:
+  slack:
+    rooms:
+      - $SLACK_TOKEN
+    on_success: always
+    on_failure: always
 deploy:
   provider: pages
   skip-cleanup: true
@@ -14,9 +20,3 @@ deploy:
   target-branch: gh-pages
   on:
     branch: master
-notifications:
-  slack:
-    rooms:
-      - $SLACK_TOKEN
-    on_success: always
-    on_failure: always
