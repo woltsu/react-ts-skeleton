@@ -29,7 +29,7 @@
     "build-css": "node-sass-chokidar --include-path ./src/index.scss --include-path ./node_modules src/index.scss -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src/index.scss --include-path ./node_modules src/index.scss -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "build- js": "react-scripts build",
+    "build-js": "react-scripts build",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint-fix": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
     "precommit": "yarn test && yarn run lint",
