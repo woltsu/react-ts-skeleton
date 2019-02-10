@@ -14,3 +14,8 @@ deploy:
   target-branch: gh-pages
   on:
     branch: master
+notifications:
+  slack:
+    rooms:
+      - $SLACK_TOKEN
+    on_failure: always
