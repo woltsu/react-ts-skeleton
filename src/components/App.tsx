@@ -1,11 +1,34 @@
-import React, { Component } from 'react';
+import React, { FunctionComponent, useEffect } from 'react'
+import { connect } from 'react-redux'
+import { fetchValue } from '../actions/exampleActions'
+import { IState } from '../interfaces'
 
-class App extends Component {
-  render() {
-    return (
-      <p>Hello!</p>
-    )
-  }
+interface IAppProps {
+  value: string,
+  fetchValue: () => void
 }
 
-export default App
+const App: FunctionComponent<IAppProps> = ({ value, fetchValue }) => {
+  useEffect(() => {
+    fetchValue()
+  }, [])
+  return (
+    <div>
+      <p className='value'>Value: { value }</p>
+      <button onClick={ fetchValue }>fetch value</button>
+    </div>
+  )
+}
+
+const mapStateToProps = (state: IState) => ({
+  value: state.example.value
+})
+
+const mapDispatchToProps = {
+  fetchValue
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
